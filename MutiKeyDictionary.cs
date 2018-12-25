@@ -35,10 +35,6 @@ namespace Project
             set { DoubleKeyDict[K1] = value; }
         }
 
-        public void Remove(T K1) => DoubleKeyDict.Remove(K1);
-
-        public void Remove(T K1, U K2) => DoubleKeyDict[K1].Remove(K2);
-
         public bool Contains(T K1)
         {
             return DoubleKeyDict.Keys.Contains(K1);
@@ -49,5 +45,9 @@ namespace Project
             if (Contains(K1)) return DoubleKeyDict[K1].Keys.Contains(K2);
             else return false;
         }
+
+        public void Remove(T K1) => DoubleKeyDict.Remove(K1);
+
+        public void Remove(T K1, U K2) => DoubleKeyDict[K1].Remove(K2);
     }
 }
